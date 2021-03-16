@@ -1,0 +1,583 @@
+/*
+** Lightbox
+*/
+
+.wpc-lightbox-header {
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.wpc-lightbox-close {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.wpc-lightbox-wrapper, .wpc-award-lightbox-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+.wpc-lightbox-wrapper {
+    z-index: 999999;
+}
+
+.wpc-award-lightbox-wrapper {
+    z-index: 999998;
+}
+
+.wpc-award-lightbox-content {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.wpc-lightbox, .wpc-award-lightbox {
+    position: relative;
+    overflow-y: auto;
+    background-color: #fff;
+    margin: 60px auto 0;
+    width: 80%;
+    max-width: 510px;
+    max-height: 432px;
+    border: 1px solid lightgray;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width: 997px) {
+    .wpc-badge-lightbox, .wpc-award-lightbox {
+        max-height: 340px;
+        max-width: 288px;
+    }
+}
+
+/*
+* General Templates
+*/
+
+.wpc-setting {
+    padding: 10px 0;
+}
+
+.wpc-comments-wrapper {
+    margin-top: 60px;
+}
+
+.wpc-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.wpc-tab-content-header {
+    padding: 20px;
+    margin: -20px -20px 20px -20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid lightgray;
+}
+
+.wpc-lesson-excerpt {
+    margin-bottom: 20px;
+}
+
+.wpc-tab {
+    display: inline-block;
+    padding: 7px 10px;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    border-bottom: none;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+    color: #444;
+}
+
+.wpc-tab:first-of-type {
+    margin-left: 10px;
+}
+
+.wpc-tab-active {
+    position: relative;
+    top: 1px;
+    padding: 8px 10px 7px 10px;
+    background-color: #fff;
+}
+
+.wpc-tab-content {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    background-color: #fff;
+}
+
+.wpc-tab-content .single-quiz-results-wrapper {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media screen and (max-width: 667px) {
+    .wpc-tab {
+        display: block;
+        margin: 0 0 -1px;
+        border-bottom: 1px solid lightgray;
+    }
+    .wpc-tab-active {
+        top: 0;
+        padding: 7px 10px;
+    }
+    .wpc-tab:first-of-type {
+        margin: 0 0 -1px;
+    }
+}
+
+.wpc-tab-content input[type="search"] {
+    border: 1px solid lightgray;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #444;
+}
+
+.wpc-tab-content .paginate_button.disabled { 
+    opacity: 0.5;
+    border: 0 !important;
+    background: none !important;
+}
+
+.wpc-tab-content .paginate_button.disabled:hover {
+    background: none !important;
+}
+
+.wpc-tab-content .dataTables_filter {
+    margin-bottom: 20px;
+}
+
+.wpc-tab-content .odd {
+    background-color: #f5f5f5;
+}
+
+.wpc-container {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.wpc-light-box {
+    background-color: #ffffff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.wpc-input {
+    border: 1px solid lightgray;
+    padding: 5px 10px;
+}
+
+.wpc-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #23d19f;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid #12ad80;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.wpc-form-button {
+    font-size: 14px;
+}
+
+.wpc-button a {
+    color: white;
+}
+
+.wpc-button:hover {
+    color: white;
+    background-color: #12ad80;
+    cursor: pointer;
+}
+
+.wpc-button.active {
+    background-color: #009ee5;
+    border-color: #027fb7;
+}
+
+.wpc-button-alt {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #009ee5;
+    border: 1px solid #036d9c;
+}
+
+.wpc-button-alt:hover {
+    background-color: #036d9c;
+}
+
+.wpc-button-alt-2 {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #e25b4f;
+    border: 1px solid #af473e;
+}
+
+.wpc-button-alt-2:hover {
+    background-color: #af473e;
+}
+
+.wpc-row {
+    position: relative;
+    width: 80%;
+    max-width: 1080px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.wpc-sidebar, .wpc-sidebar-content {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+}
+
+.wpc-sidebar {
+    width: 35%;
+}
+
+.wpc-left-sidebar {
+    width: calc(35% - 20px);
+    margin-right: 20px;
+}
+
+.wpc-right-sidebar {
+    width: calc(35% - 20px);
+    margin-left: 20px;
+}
+
+.wpc-sidebar-content {
+    width: 65%;
+}
+
+.wpc-sidebar-content ol {
+    list-style: decimal;
+    padding: 20px 0 20px 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .wpc-sidebar, .wpc-sidebar-content {
+        width: 100%;
+        float: none;
+    }
+    .wpc-sidebar-content {
+        margin-bottom: 20px;
+    }
+    .wpc-right-sidebar {
+        margin-left: 0;
+    }
+    .wpc-left-sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* 
+** Profile Page
+*/
+
+#wpc-last-viewed-wrapper {
+    margin-bottom: 20px;
+}
+
+.wpc-shortcode-container, .wpc-shortcode-row {
+    overflow: hidden;
+}
+
+.wpc-user-img img {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 240px;
+    max-width: 240px;
+    border: 1px solid lightgray;
+}
+
+@media screen and (max-width: 980px) {
+    .wpc-user-img img {
+        max-width: 180px;
+    }
+}
+
+.wpc-username {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*
+* Course Pages
+*/
+
+.wpc-single-course-lesson-wrapper {
+    margin-top: 20px;
+}
+
+#wpc-course-search {
+    max-width: 148px;
+}
+
+@media screen and (max-width: 505px) {
+    .wpc-course-filter-sep {
+        display: block !important;
+        margin-top: 10px;
+    }
+}
+
+.wpc-course-categories-list {
+    padding: 0 !important;
+}
+
+.wpc-course-categories-list li {
+    list-style-type: none;
+}
+
+.course-container {
+    width: calc(50% - 10px);
+    margin: 0px 19px 20px 0;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+}
+@media screen and (max-width: 1200px){
+    .course-container {
+        width: 100%;
+    }
+}
+
+.course-container:nth-of-type(even) {
+    margin-right: 0;
+    margin-left: -4px;
+}
+
+.course-container h2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.wpc-progress-bar {
+    background-color: #d0d0d0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.wpc-viewed-progress {
+    background-color: #23d19f !important;
+}
+
+.wpc-progress-bar-level {
+    background-color: #009ee5;
+    color: white;
+    padding: 5px 0;
+    -webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s, height 1s;
+}
+
+.wpc-progress-bar-text {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.course-title {
+    margin-top: 15px;
+}
+
+.course-category-list .wpc-button {
+    display: block;
+}
+.course-category-list ul {
+    padding: 0;
+    margin: 0;
+}
+.course-category-list ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.course-meta-wrapper {
+    background: #ececec;
+    padding: 10px 20px;
+    margin: 20px -20px -20px -20px;
+    border-top: 1px solid lightgray;
+}
+
+.start-button {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.course-category-list .cm-item {
+    background-color: #23d19f;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid #12ad80;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.course-category-list .cm-item:hover {
+    background-color: #12ad80;
+}
+
+/*
+* Lesson Pages
+*/
+
+.single-lesson-course-progress {
+    margin-bottom: 15px;
+}
+
+.wpc-module-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    margin-top: 20px;
+}
+
+.wpc-module-title:first-of-type {
+    margin-top: 0;
+}
+
+.wpc-module {
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+}
+
+.toolbar-button {
+    padding: 5px;
+    border: 1px solid lightgray;
+    display: block;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.lesson-list {
+    padding: 0 !important;
+    list-style-type: none !important;
+}
+
+.lesson-nav {
+    margin: 0;
+    padding: 0 10px 0 0 !important;
+    position: relative;
+    list-style-type: none;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.wpc-single-course-lesson-wrapper .lesson-nav {
+    max-height: none;
+    padding: 0 !important;
+}
+
+.lesson-button {
+    border: 1px solid lightgray;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 4px;
+    list-style-type: none;
+    background-color: #ffffff;
+    display: block;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+}
+
+.lesson-button:hover {
+    background-color: #ececec;
+}
+
+.lesson-button:first-of-type {
+    margin-top: 0;
+}
+
+.lesson-button i {
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.lesson-button a:hover {
+    text-decoration: none;
+}
+
+.active-lesson-button a {
+    color: black;
+}
+
+a.wpc-completed, a.wpc-viewed {
+    color: white;
+}
+
+a.wpc-viewed {
+    background-color: #23d19f;
+    border: 1px solid #12ad80;
+}
+
+a.wpc-viewed:hover {
+    background-color: #12ad80;
+}
+
+a.wpc-completed {
+    background-color: #009ee5;
+    border: 1px solid #036d9c;
+}
+
+a.wpc-completed:hover {
+    background-color: #036d9c;
+}
+
+.tool-toggle {
+    display: inline-block;
+}
+
+.tool-toggle i {
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    background: #23d19f;
+    border: 1px solid #12ad80;
+    border-radius: 4px;
+    color: white;
+}
+
+.tool-toggle i:hover {
+    cursor: pointer;
+}
+
+.tools-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.toolbar-content {
+    margin: 10px 0;
+    display: none;
+    max-height: 184px;
+    overflow-y: scroll;
+}
+
+/*
+* Teacher Templates
+*/
+
+.wpc-single-teacher-thumbnail img {
+    border-radius: 500px;
+    border: 1px solid lightgray;
+    padding: 20px;
+    background: white;
+}
